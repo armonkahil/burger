@@ -1,0 +1,50 @@
+<div class="container">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8 justify-content-center">
+        <div class="text-center">
+          <img src='/assets/images/burger.png' alt='burger' type='img/png' class='logo'>
+          <h1>Eat-Da-Burger!</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-between">
+      <div class="col-4">
+        <ol type="1" class="list-group">
+          {{#each burgers}}
+          {{#unless devoured}}
+          {{> burger/burger-block devoured=true}}
+          {{/unless}}
+          <hr>
+          {{/each}}
+        </ol>
+      </div>
+      <div class="col-4">
+        <ol type="1" class="list-group">
+          {{#each burgers}}
+          {{#if devoured}}
+          {{> burger/burger-block devoured=false}}
+          {{/if}}
+          {{/each}}
+        </ol>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-8 justify-content-center">
+        <div class="text-center">
+          <form>
+            <input type="text" name="name" id='burgerName'><br>
+            <input class="btn btn-primary btn-small" type="button" value="Submit" id="add">
+            <p>Enter a burger you want to eat Click the "Submit" button.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

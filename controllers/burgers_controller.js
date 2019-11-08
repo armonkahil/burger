@@ -1,8 +1,16 @@
 var express = require('express')
-var Burger = require('../models/burger')
+var burger = require('../models/burger')
 
-var router = {
+var router = express.Router()
 
-}
-
+router.get('/', function (req, res) {
+  burger.all(function (data) {
+    var handlebarsOBj = {
+      burgers: data
+    }
+    console.log(data)
+    res.render('index', handlebarsOBj)
+  }
+  )
+})
 module.exports = router

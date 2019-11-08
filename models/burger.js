@@ -1,7 +1,11 @@
-var ORM = require('../config/orm')
+var orm = require('../config/orm')
 
-var Burger = {
-
+var burger = {
+  all: (cb) => {
+    orm.selectAll('burgers', (res) => {
+      cb(res)
+    })
+  }
 }
 
-module.exports = Burger
+module.exports = burger

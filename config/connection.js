@@ -1,4 +1,5 @@
 var mysql = require('mysql')
+const chalk = require('chalk')
 
 var connection = mysql.createConnection({
   host: 'localhost',
