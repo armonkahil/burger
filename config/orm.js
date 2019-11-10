@@ -1,14 +1,15 @@
 var connection = require('../config/connection')
 
 var orm = {
+  // select all function
   selectAll: (tableSel, callback) => {
     const newQuery = 'SELECT * FROM ??'
     connection.query(newQuery, [tableSel], function (err, result) {
       if (err) throw err
-      // console.table(result)
       callback(result)
     })
   },
+  // add new burger function
   insertOne: (tableSel, newBurger, callback) => {
     const newQuery = 'INSERT INTO ' + tableSel + ' SET ?'
     connection.query(newQuery, [
@@ -20,6 +21,7 @@ var orm = {
       callback(result)
     })
   },
+  // function to change devour condition
   updateOne: function (tableSelected, burger, status, callback) {
     const newQuery = 'UPDATE ' + tableSelected + ' SET ? WHERE ?'
     connection.query(newQuery, [
