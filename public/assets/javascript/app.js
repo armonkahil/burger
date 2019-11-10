@@ -21,6 +21,7 @@ $(document).ready(function () {
     $.ajax('/api/burgers/' + eaten, {
       type: 'PUT'
     }).then(function () {
+      console.log('devouring burger')
       location.reload()
     })
   })
