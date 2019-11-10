@@ -5,38 +5,33 @@ var orm = {
     const newQuery = 'SELECT * FROM ??'
     connection.query(newQuery, [tableSel], function (err, result) {
       if (err) throw err
-      console.table(result)
+      // console.table(result)
       callback(result)
     })
   },
-  insertOne: (tableSel, newBurger) => {
-    const newQuery = 'INSERT INTO ?? SET ??'
-    connection.query(newQuery, [tableSel,
-      {
-        burger_name: newBurger.name,
-        devoured: newBurger.status
-      }], (err, result) => {
-      if (err) {
-        return result.status(500).end()
-      }
-      console.table(result)
-    }).then()
-  },
-  updateOne: (tableSel, burger) => {
-    const newQuery = 'UPDATE ?? SET ? WHERE ?'
+  insertOne: (tableSel, newBurger, callback) => {
+    const newQuery = 'INSERT INTO ' + tableSel + ' SET ?'
     connection.query(newQuery, [
-      tableSel,
       {
-        devoured: burger.status
+        burger_name: newBurger.burger_name,
+        devoured: newBurger.devoured
+      }], (err, result) => {
+      if (err) throw err
+      callback(result)
+    })
+  },
+  updateOne: function (tableSelected, burger, status, callback) {
+    const newQuery = 'UPDATE ' + tableSelected + ' SET ? WHERE ?'
+    connection.query(newQuery, [
+      {
+        devoured: status
 
       },
       {
-        burger_name: burger.name
-      }], (err, result) => {
-      if (err) {
-        return result.status(500).end()
-      }
-      console.table(result)
+        burger_name: burger
+      }], function (err, result) {
+      if (err) throw err
+      callback(result)
     })
   }
 }
