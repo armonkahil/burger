@@ -3,6 +3,9 @@
 ### Technologies used:
 - Orm
 - Node.js
-- mysql
-- express
-- express-handlebars
+- Mysql
+- Express
+- Express-handlebars
+- Chalk
+- Heroku
+- JawsDB
