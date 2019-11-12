@@ -2,6 +2,8 @@ var mysql = require('mysql')
 const chalk = require('chalk')
 const normal = chalk.hex('#F58148')
 var connection
+
+// if JawsDB exist...
 if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection(process.env.JAWSDB_URL)
 } else {

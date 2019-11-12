@@ -1,7 +1,7 @@
 
 $(document).ready(function () {
   var munch = new Audio('./assets/audio/munch-sound-effect.mp3')
-  munch.autoplay=true;
+  munch.autoplay = true;
   $('#add').on('click', function () {
     event.preventDefault()
     const burger = $('#burgerName').val().trim()

@@ -11,3 +11,5 @@ CREATE TABLE burgers (
   createdAt TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (id)
 );
+
+select * from burgers;
