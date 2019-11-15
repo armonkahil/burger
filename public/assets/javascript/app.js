@@ -2,12 +2,12 @@
 $(document).ready(function () {
   var munch = new Audio('./assets/audio/munch-sound-effect.mp3')
   munch.autoplay = true;
-  var wrong = new Audio('./assets/audio/bell-origin-beep.mp3')
-  wrong.autoplay = true;
+  var wrong = new Audio('./assets/audio/ball-origin-beep.mp3')
   $('#add').on('click', function () {
     event.preventDefault()
     const burger = $('#burgerName').val().trim()
     if (burger === '' || burger === undefined) {
+      wrong.autoplay = true;
       wrong.play()
       alert('Try Again')
     } else {
