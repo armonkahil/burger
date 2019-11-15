@@ -35,6 +35,15 @@ var orm = {
       if (err) throw err
       callback(result)
     })
+  },
+  deleteOne: function (tableselected, burger, callback) {
+    const newQuery = 'DELETE FROM ?? WHERE ?'
+    console.log(newQuery)
+    connection.query(newQuery, [tableselected, { burger_name: burger }], function (err, result) {
+      if (err) throw err
+      console.table(result)
+      callback(result)
+    })
   }
 }
 

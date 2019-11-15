@@ -21,18 +21,34 @@ router.post('/api/burgers/:burger', function (req, res) {
     devoured: false
   }
   burger.new(newBurger, function (result) {
-    res.redirect('/')
+    res.render('partials/burgers/burger-unblocked')
+    
   })
 })
 
 router.put('/api/burgers/:id', function (req, res) {
   var eaten = req.params.id
   burger.ate('burgers', eaten, function (result) {
-    if (result.changedRows === 0) {
-      return res.status(404).end()
-    } else {
-      res.status(200).end()
-    }
+    console.table(result)
+    res.render('partials/burgers/burger-unblocked')
+  })
+})
+
+router.delete('/api/burgers/:name', function (req, res) {
+  console.log(req.params.name)
+  var name = req.params.name
+  burger.delete('burgers', name, function (result) {
+    console.table(result)
+    res.render('partials/burgers/burger-unblocked')
+  })
+})
+
+router.delete('/api/burgers/devoured/:name', function (req, res) {
+  console.log(req.params.name)
+  var name = req.params.name
+  burger.delete('burgers', name, function (result) {
+    console.table(result)
+    res.render('partials/burgers/burger-block')
   })
 })
 

@@ -15,6 +15,11 @@ var burger = {
     orm.updateOne(tableSel, burger, true, function (res) {
       cb(res)
     })
+  },
+  delete: function (tableSel, burger, cb) {
+    orm.deleteOne(tableSel, burger, function (res) {
+      cb(res)
+    })
   }
 }
 

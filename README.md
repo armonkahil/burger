@@ -9,6 +9,7 @@ In this assignment, we were tasked with building a full-stack website that save 
 - MySQL
 - Express
 - Express-handlebars
+- Partials
 - Chalk
 - Heroku
 - JawsDB

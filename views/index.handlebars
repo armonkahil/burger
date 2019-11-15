@@ -12,17 +12,13 @@
   </div>
 {{! Burger list sections}}
   <div class="container-fluid">
-    <div class="row justify-content-between">
+    <div class="row justify-content-around">
       <div class="col-4">
         <h2 class="text-center font-effect-fire">Burgers Saved</h2>
         <ol class="list-group font-effect-shadow-multiple">
           {{#each burgers}}
           {{#unless devoured}}
-          <li class="justify-content-end">
-            {{burger_name}}
-            <button class="devour btn btn-primary btn-sm float-right font-effect-fire-animation" id="{{burger_name}}">Devour!!!
-            </button>
-          </li>
+            {{> burgers/burger-unblocked devoured=false}}
           {{/unless}}
           {{/each}}
         </ol>
@@ -32,9 +28,7 @@
         <ol type="1" class="list-group font-effect-shadow-multiple">
           {{#each burgers}}
           {{#if devoured}}
-          <li class="justify-content-end">
-            {{burger_name}}
-          </li>
+            {{> burgers/burger-block devoured=true}}
           {{/if}}
           {{/each}}
         </ol>

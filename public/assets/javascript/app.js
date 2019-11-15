@@ -2,10 +2,13 @@
 $(document).ready(function () {
   var munch = new Audio('./assets/audio/munch-sound-effect.mp3')
   munch.autoplay = true;
+  var wrong = new Audio('./assets/audio/bell-origin-beep.mp3')
+  wrong.autoplay = true;
   $('#add').on('click', function () {
     event.preventDefault()
     const burger = $('#burgerName').val().trim()
     if (burger === '' || burger === undefined) {
+      wrong.play()
       alert('Try Again')
     } else {
       munch.play()
@@ -26,6 +29,35 @@ $(document).ready(function () {
       type: 'PUT'
     }).then(function () {
       console.log('devouring burger')
+      location.reload()
+    })
+  })
+  $('.delete').on('click', function () {
+    event.preventDefault()
+    console.log(this.id)
+    var burgerDelete = this.id
+    burgerDelete = burgerDelete.slice(1, burgerDelete.length)
+    console.log(burgerDelete)
+    munch.play()
+    $.ajax('/api/burgers/' + burgerDelete, {
+      type: 'DELETE'
+    }
+    ).then(() => {
+      location.reload()
+    })
+  })
+
+  $('.devoured-delete').on('click', function () {
+    event.preventDefault()
+    console.log(this.id)
+    var burgerDelete = this.id
+    burgerDelete = burgerDelete.slice(1, burgerDelete.length)
+    console.log(burgerDelete)
+    munch.play()
+    $.ajax('/api/burgers/devoured/' + burgerDelete, {
+      type: 'DELETE'
+    }
+    ).then(() => {
       location.reload()
     })
   })
