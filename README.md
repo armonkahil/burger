@@ -16,6 +16,8 @@ In this assignment, we were tasked with building a full-stack website that save 
 - Jquery
 - MVC
 - Google Fonts
+- Gradient-String
+- Dotenv
 
 ### Welcome to Eat-Da-Burger!!
 ![First Image](/public/assets/images/Capture1.PNG)

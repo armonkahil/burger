@@ -1,4 +1,7 @@
-var mysql = require('mysql')
+require('dotenv').config()
+const keys = require('../keys.js')
+const gateKeys = keys.mysql_db
+const mysql = require('mysql')
 const chalk = require('chalk')
 const normal = chalk.hex('#F58148')
 var connection
@@ -10,8 +13,8 @@ if (process.env.JAWSDB_URL) {
   connection = mysql.createConnection({
     host: 'localhost',
     port: 3306,
-    user: 'root',
-    password: 'password',
+    user: gateKeys.id,
+    password: gateKeys.key,
     database: 'burgers_db'
   })
 }

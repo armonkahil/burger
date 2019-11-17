@@ -21,6 +21,7 @@ router.post('/api/burgers/:burger', function (req, res) {
     devoured: false
   }
   burger.new(newBurger, function (result) {
+    console.table(result)
     res.render('partials/burgers/burger-unblocked')
     
   })
