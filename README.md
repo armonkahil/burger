@@ -1,7 +1,10 @@
-# [Burger Logger](https://obscure-meadow-09470.herokuapp.com/)
-Node, Handlebars, and MySQL Full-stack assignment
+### Welcome to Eat-Da-Burger!!
+![First Image](/public/assets/images/Capture1.PNG)
 
+A Node, Handlebars, and MySQL Full-stack assignment
+___
 In this assignment, we were tasked with building a full-stack website that save data to a mysql database and rendered data to the viewport via Handlebars.
+#### Deployed on [Heroku](https://obscure-meadow-09470.herokuapp.com/)
 
 ### Technologies used:
 - Orm
@@ -19,8 +22,6 @@ In this assignment, we were tasked with building a full-stack website that save 
 - Gradient-String
 - Dotenv
 
-### Welcome to Eat-Da-Burger!!
-![First Image](/public/assets/images/Capture1.PNG)
 
 ### Enter a burger
 ![Second Image](/public/assets/images/Capture2.PNG)
