@@ -1,6 +1,5 @@
 ### Welcome to Eat-Da-Burger!!
 ![First Image](/public/assets/images/Capture1.PNG)
-
 A Node, Handlebars, and MySQL Full-stack assignment
 ___
 In this assignment, we were tasked with building a full-stack website that save data to a mysql database and rendered data to the viewport via Handlebars.
@@ -21,6 +20,7 @@ In this assignment, we were tasked with building a full-stack website that save 
 - Google Fonts
 - Gradient-String
 - Dotenv
+- Bootstrap 4
 
 
 ### Enter a burger
