@@ -1,4 +1,4 @@
-### Welcome to Eat-Da-Burger!!
+### Welcome to Eat-Da-Burger!! [![Known Vulnerabilities](https://snyk.io/test/github/armonkahil/burger/badge.svg?targetFile=package.json)](https://snyk.io/test/github/armonkahil/burger?targetFile=package.json)
 ![First Image](/public/assets/images/Capture1.PNG)
 A Node, Handlebars, and MySQL Full-stack assignment
 ___
